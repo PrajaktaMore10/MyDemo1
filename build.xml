@@ -1,4 +1,4 @@
-<project name=”Salesforce Ant tasks” default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name=”MyDemo” default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
