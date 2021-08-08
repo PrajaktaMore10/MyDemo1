@@ -1,6 +1,0 @@
-<apex:page >
-  <!-- Begin Default Content REMOVE THIS -->
-  <h1>Welcome To Salesforce</h1>
-  This is your new Page
-  <!-- End Default Content REMOVE THIS -->
-</apex:page>
