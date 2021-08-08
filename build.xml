@@ -11,7 +11,7 @@
     <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
     <target name="deployall">
       <!-- Upload the contents of the "mypkg" package -->
-      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" testlevel=”NoTestRun” deployRoot="force-app"/>
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="force-app"/>
     </target>
 
 </project>
