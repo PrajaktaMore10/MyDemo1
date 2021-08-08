@@ -1,4 +1,5 @@
-<project name="DemoSFDX" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+<project>
+    <name="DemoSFDX" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
