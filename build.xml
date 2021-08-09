@@ -23,8 +23,7 @@
       <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="..\force-app\main\default" unpackaged="package.xml"/>
     </target>
 
-<<<<<<< HEAD
+
 </project>
-=======
+
 </project>
->>>>>>> refs/remotes/origin/master
