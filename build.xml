@@ -1,25 +1,26 @@
-<?xml version="1.0"?>
+<project name="Sample usage of Salesforce Ant tasks" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
--<project xmlns:sf="antlib:com.salesforce" basedir="." default="test" name="DemoSFDX">
+    <property file="build.properties"/>
+    <property environment="env"/>
 
-<property file="build.properties"/>
+    <!-- Setting default value for username, password and session id properties to empty string
+         so unset values are treated as empty. Without this, ant expressions such as ${sf.username}
+         will be treated literally.
+    -->
+    <condition property="sf.username" value=""> <not> <isset property="sf.username"/> </not> </condition>
+    <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
+    <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
 
-<property environment="env"/>
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="ant-salesforce.jar" />           
+        </classpath>
+    </taskdef>
 
-<!-- Setting default value for username, password and session id properties to empty stringso unset values are treated as empty. Without this, ant expressions such as ${sf.username}will be treated literally. -->
-
-
-<!-- Test out deploy and retrieve verbs for package 'mypkg' -->
-
-
-
--<target name="deployeall">
-
-<!-- Upload the contents of the "mypkg" package -->
-
-
-<sf:deploy rollbackOnError="true" deployRoot="force-app" serverurl="${sf.serverurl}" password="${sf.password}" username="${sf.username}"/>
-
-</target>
+    <!-- Shows retrieving code; only succeeds if done after deployCode -->
+    <target name="retrieveCode">
+      <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
+      <sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="..\force-app\main\default" unpackaged="package.xml"/>
+    </target>
 
 </project>
