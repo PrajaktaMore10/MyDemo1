@@ -1,0 +1,17 @@
+<project name="DemoSFDX" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    <!-- Setting default value for username, password and session id properties to empty string 
+         so unset values are treated as empty. Without this, ant expressions such as ${sf.username}
+         will be treated literally.
+    -->
+
+    <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
+    <target name="deployeall">
+      <!-- Upload the contents of the "mypkg" package -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="force-app" rollbackOnError="true"/>
+    </target>
+
+</project>
