@@ -103,6 +103,10 @@
 <target name="cancelDeploy">
   <sf:cancelDeploy  username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" requestId="${sf.requestId}"/>
 </target>
+  
+  <target name="Test">
+	  <sf:cancelDeploy  username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" requestId="${sf.requestId}"/>
+	</target>
 
 <!-- Retrieve the information of all items of a particular metadata type -->
   <target name="listMetadata">
